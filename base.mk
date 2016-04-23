@@ -152,11 +152,6 @@ CONNECTIVITY += services-ext
 CURL := libcurl
 CURL += curl
 
-#CM
-CM := CMFileManager
-CM += Trebuchet
-CM += Eleven
-
 #DASH
 DASH := libdashplayer
 DASH += libqcmediaplayer
@@ -312,13 +307,6 @@ KEYPAD += ue_rf4ce_remote.kl
 KS := ks
 KS += qcks
 KS += efsks
-
-#LAUNCHER
-LAUNCHER := Launcher2
-LAUNCHER += Launcher3
-LAUNCHER += libemoji
-LAUNCHER += Browser
-LAUNCHER += libsepol
 
 #LIB_NL
 LIB_NL := libnl_2
@@ -640,7 +628,6 @@ PRODUCT_PACKAGES := \
     Gallery2 \
     LatinIME \
     Mms \
-    Music \
     Phone \
     Provision \
     Protips \
@@ -680,7 +667,6 @@ PRODUCT_PACKAGES += $(CIMAX)
 PRODUCT_PACKAGES += $(CONNECTIVITY)
 PRODUCT_PACKAGES += $(CHARGER)
 PRODUCT_PACKAGES += $(CURL)
-PRODUCT_PACKAGES += $(CM)
 PRODUCT_PACKAGES += $(RCS)
 PRODUCT_PACKAGES += $(DASH)
 PRODUCT_PACKAGES += $(DATA_OS)
@@ -699,7 +685,6 @@ PRODUCT_PACKAGES += $(IPTABLES)
 PRODUCT_PACKAGES += $(KERNEL_TESTS)
 PRODUCT_PACKAGES += $(KEYPAD)
 PRODUCT_PACKAGES += $(KS)
-PRODUCT_PACKAGES += $(LAUNCHER)
 PRODUCT_PACKAGES += $(LIB_NL)
 PRODUCT_PACKAGES += $(LIB_XML2)
 PRODUCT_PACKAGES += $(LIBCAMERA)
@@ -836,6 +821,9 @@ PRODUCT_PACKAGE_OVERLAYS += device/qcom/common/product/overlay
 # include additional build utilities
 -include device/qcom/common/utils.mk
 
+# Inherit some common YUOS stuff.
+$(call inherit-product-if-exists, vendor/yuos/config/common.mk)
+ 
 #Enabling Ring Tones
 #include frameworks/base/data/sounds/OriginalAudio.mk
 
