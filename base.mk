@@ -1,5 +1,6 @@
 # Board platforms lists to be used for
 # TARGET_BOARD_PLATFORM specific featurization
+#test changes
 QCOM_BOARD_PLATFORMS += msm8974
 QCOM_BOARD_PLATFORMS += msm8610
 QCOM_BOARD_PLATFORMS += msm8226
